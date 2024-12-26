@@ -1,360 +1,581 @@
 # Manual de Conhecimento - ICMC Júnior
 
-## Sumário
+# Sumário
 
-1.  [1.1 Docker e Containers](#11-docker-e-containers)
-    1.  [1.1.1 Docker na Prática](#111-docker-na-pratica)
-    2.  [1.1.2 Docker para Desenvolvimento](#112-docker-para-desenvolvimento)
-    3.  [1.1.3 Docker para Produção](#113-docker-para-producao)
-    4.  [1.1.4 Containers Deep Dive](#114-containers-deep-dive)
-2.  [1.2 APIs: Design, REST, gRPC e API Gateway](#12-apis-design-rest-grpc-e-api-gateway)
-    1.  [1.2.1 REST e Níveis de Maturidade na Prática](#121-rest-e-niveis-de-maturidade-na-pratica)
-    2.  [1.2.2 gRPC](#122-grpc)
-    3.  [1.2.3 Design de APIs](#123-design-de-apis)
-    4.  [1.2.4 API Gateway](#124-api-gateway)
-3.  [1.3 Testes automatizados](#13-testes-automatizados)
-    1.  [1.3.1 TDD - Test Driven Development](#131-tdd---test-driven-devolopment)
-    2.  [1.3.2 Testes avançados: Padrões, tipos e ferramentas](#132-testes-avancados-padroes-tipos-e-ferramentas)
-    3.  [1.3.3 Testcontainers](#133-testcontainers)
-4.  [1.4 SOLID e Design Patterns](#14-solid-e-design-patterns)
-    1.  [1.4.1 SOLID na Prática - Princípios e Aplicações em Design de Software](#141-solid-na-pratica---principios-e-aplicacoes-em-design-de-software)
-    2. [1.4.2 SOLID na Prática - Princípios e Aplicações em Design de Software](#142-solid-na-pratica---principios-e-aplicacoes-em-design-de-software-2)
-    3. [1.4.3 Design Patterns na Prática - Gang of Four e Aplicações Reais](#143-design-patterns-na-pratica---gang-of-four-e-aplicacoes-reais)
-5.  [1.5 Arquitetura MVC, Hexagonal, Clean Archtecture e MultiTenancy](#15-arquitetura-mvc-hexagonal-clean-archtecture-e-multitenancy)
-    1. [1.5.1 Arquitetura em Camadas MVC](#151-arquitetura-em-camadas-mvc)
-    2. [1.5.2 Arquitetura Hexagonal e Clean Archtecture](#152-arquitetura-hexagonal-e-clean-archtecture)
-    3.  [1.5.3 Arquitetura Multi-Tenancy](#153-arquitetura-multi-tenancy)
-6.  [1.6 Domain Driven Design, Microsserviços e mensageria](#16-domain-driven-design-microsservicos-e-mensageria)
-    1.  [1.6.1 Domain-Driven Design (DDD)](#161-domain-driven-design-ddd)
-    2.  [1.6.2 Domain-Driven Design e Arquitetura baseada em eventos](#162-domain-driven-design-e-arquitetura-baseada-em-eventos)
-    3.  [1.6.3 RabbitMQ](#163-rabbitmq)
-    4.  [1.6.4 Arquitetura baseada em microsserviços](#164-arquitetura-baseada-em-microsservicos)
-    5.  [1.6.5 Apache Kafka](#165-apache-kafka)
-7. [1.7 Sistemas legados e monólitos: Modernização e decomposição](#17-sistemas-legados-e-monolitos-modernizacao-e-decomposicao)
-    1. [1.7.1 Criação de monolitos modulares](#171-criacao-de-monolitos-modulares)
-    2. [1.7.2 Modernização de sistemas legados](#172-modernizacao-de-sistemas-legados)
-    3. [1.7.3 Decomposição de sistemas monolíticos para microsserviços](#173-decomposicao-de-sistemas-monoliticos-para-microsservicos)
-8. [2. DevOps e SRE](#2-devops-e-sre)
-    1. [2.1 Kubernetes, Pipelines CI/CD e Infra as Code](#21-kubernetes-pipelines-cicd-e-infra-as-code)
-        1. [2.1.1 Kubernetes](#211-kubernetes)
-        2. [2.1.2 Helm](#212-helm)
-        3. [2.1.3 Terraform](#213-terraform)
-        4. [2.1.4 Pipelines, GitOps e ArgoCD](#214-pipelines-gitops-e-argocd)
-    2. [2.2 SRE, Monitoramento e Observabilidade](#22-sre-monitoramento-e-observabilidade)
-        1. [2.2.1 Observabilidade](#221-observabilidade)
-        2.  [2.2.2 Prometheus e Grafana](#222-prometheus-e-grafana)
-        3.  [2.2.3 OpenTelemetry](#223-opentelemetry)
-        4.  [2.2.4 Site Reliability Engineering](#224-site-reliability-engineering)
-    3. [2.3 DevSecOps na Prática](#23-devsecops-na-pratica)
-9.  [3. Banco de dados](#3-banco-de-dados)
-    1. [3.1 SQL](#31-sql)
-        1. [3.1.1 PosgreeSQL para desenvolvedores](#311-posgreesql-para-desenvolvedores)
-        2. [3.1.2 MySQL para desenvolvedores](#312-mysql-para-desenvolvedores)
-    2. [3.2 NoSQL](#32-nosql)
-        1.  [3.2.1 MongoDB para desenvolvedores](#321-mongodb-para-desenvolvedores)
-        2.  [3.2.2 Redis para desenvolvedores](#322-redis-para-desenvolvedores)
-10. [4. Segurança](#4-seguranca)
-    1. [4.1 Autenticação e autorização: Tokens JWT, ACL e RBAC](#41-autenticacao-e-autorizacao-tokens-jwt-acl-e-rbac)
-    2. [4.2 Keycloak: o Auth2, OpenID Connect e Single Sign-On](#42-keycloak-o-auth2-openid-connect-e-single-sign-on)
-    3.  [4.3 OWASP 10, Segurança de APIs e Secret Management (Vault)](#43-owasp-10-seguranca-de-apis-e-secret-management-vault)
+## 1. Fundamentos do Desenvolvimento Web
 
----
-### 1.1 Docker e Containers
-<a id="11-docker-e-containers"></a>
+*   **1.1 Controle de Versão com Git e GitHub**
+    *   1.1.1 Fluxos de Trabalho com Git
+    *   1.1.2 Colaboração em Projetos no GitHub
+    *   1.1.3 Pull Requests e Code Reviews
+*   **1.2 Desenvolvimento Frontend**
+    *   1.2.1 HTML Semântico e Acessibilidade
+    *   1.2.2 CSS Modules e Estilização
+    *   1.2.3 React: Componentes, Hooks e Context API
+    *   1.2.4 UX/Prototipação para Frontends
+    *   1.2.5 Electron: Desenvolvimento de Aplicativos Desktop
+    *   1.2.6 Frameworks CSS (Tailwind, Bootstrap)
+*   **1.3 Desenvolvimento Backend**
+    *   1.3.1 Node.js: Fundamentos e Ecossistema
+    *   1.3.2 JavaScript e TypeScript no Backend
+    *   1.3.3 Django: Framework para Aplicações Web em Python
+*  **1.4 Arquitetura Web**
+    *   1.4.1 Princípios de Arquitetura Web
+    *   1.4.2 Desacoplamento e Modularização
+    *   1.4.3 Escalabilidade e Performance
 
-### 1.1.1 Docker na Prática
-<a id="111-docker-na-pratica"></a>
+## 2. Containers e Orquestração
 
-Este guia detalha o uso prático do Docker para desenvolvimento e orquestração de aplicações. Ele abrange desde os fundamentos até configurações avançadas, com exemplos de comandos e organização de projeto.
+*   **2.1 Docker e Containers**
+    *   2.1.1 Docker na Prática
+    *   2.1.2 Docker para Desenvolvimento
+    *   2.1.3 Docker para Produção
+    *   2.1.4 Containers Deep Dive
 
-### Fundamentos e Configuração do Docker
-<a id="fundamentos-e-configuracao-do-docker"></a>
+## 3. APIs e Comunicação
 
-### Conceitos básicos e arquitetura do Docker
--   **Docker Engine:** É o módulo principal do Docker, responsável por criar e gerenciar containers. Ele funciona como o "motor" do sistema de containers.
--   **Docker Images:** São modelos prontos que contêm o sistema operacional e as aplicações necessárias. Servem como base para criar containers.
--   **Containers:** São instâncias de imagens em execução. Eles isolam o ambiente da aplicação, garantindo consistência e independência do sistema hospedeiro.
--   **Docker CE vs Docker Desktop:**
-    -   **Docker CE** (Community Edition): Versão voltada para servidores e ambientes Linux. É gratuita e de código aberto, ideal para ambientes de produção e servidores, com foco em linha de comando e configuração manual.
-    -   **Docker Desktop:** Versão para desktops (Windows e macOS), com interface gráfica integrada e suporte adicional. Oferece uma experiência mais amigável para desenvolvedores, com recursos como interface gráfica, Kubernetes integrado e atualizações automáticas.
+*   **3.1 APIs: Design e Implementação**
+    *   3.1.1 REST e Níveis de Maturidade na Prática
+    *   3.1.2 gRPC
+    *   3.1.3 Design de APIs
+    *   3.1.4 API Gateway
 
-### Instalação do Docker
-1.  Baixe e instale o Docker Desktop pelo site oficial ([docker.com](https://www.docker.com/)).
-2.  Verifique a instalação:
-    ```bash
-    docker --version
-    ```
+## 4. Qualidade de Código e Arquitetura
 
-### Configuração inicial
-1.  Inicie o Docker Desktop.
-2.  Configure recursos como CPUs e memória em **Settings > Resources** para ajustar o desempenho conforme o hardware.
+*   **4.1 Testes Automatizados**
+    *   4.1.1 TDD - Test Driven Development
+    *   4.1.2 Testes avançados: Padrões, tipos e ferramentas
+    *   4.1.3 Testcontainers
+*   **4.2 SOLID e Design Patterns**
+    *   4.2.1 SOLID na Prática - Princípios e Aplicações em Design de Software
+    *   4.2.2 Design Patterns na Prática - Gang of Four e Aplicações Reais
+*   **4.3 Arquiteturas de Software**
+    *   4.3.1 Arquitetura em Camadas MVC
+    *   4.3.2 Arquitetura Hexagonal e Clean Architecture
+    *   4.3.3 Arquitetura Multi-Tenancy
+*  **4.4 Domain Driven Design, Microsserviços e Mensageria**
+    *   4.4.1 Domain-Driven Design (DDD)
+    *   4.4.2 Domain-Driven Design e Arquitetura baseada em eventos
+    *   4.4.3 RabbitMQ
+    *   4.4.4 Arquitetura baseada em microsserviços
+    *   4.4.5 Apache Kafka
+*   **4.5 Sistemas Legados e Monólitos**
+    *   4.5.1 Criação de monolitos modulares
+    *   4.5.2 Modernização de sistemas legados
+    *   4.5.3 Decomposição de sistemas monolíticos para microsserviços
 
-### Principais comandos para gerenciamento
--   **Listar containers ativos**: Mostra containers em execução no momento.
-    ```bash
-    docker ps
-    ```
--   **Listar todos os containers**: Inclui containers parados.
-    ```bash
-    docker ps -a
-    ```
--   **Iniciar um container**: Inicia um container previamente criado.
-    ```bash
-    docker start <container_id>
-    ```
--   **Parar um container**: Finaliza a execução de um container.
-    ```bash
-    docker stop <container_id>
-    ```
--   **Remover um container**: Deleta um container.
-    ```bash
-    docker rm <container_id>
-    ```
+## 5. DevOps e SRE
 
-### Imagens e Build de Containers
-<a id="imagens-e-build-de-containers"></a>
+*   **5.1 Kubernetes, CI/CD e Infra as Code**
+    *   5.1.1 Kubernetes
+    *   5.1.2 Helm
+    *   5.1.3 Terraform
+    *   5.1.4 Pipelines, GitOps e ArgoCD
+*   **5.2 SRE, Monitoramento e Observabilidade**
+    *   5.2.1 Observabilidade
+    *   5.2.2 Prometheus e Grafana
+    *   5.2.3 OpenTelemetry
+    *   5.2.4 Site Reliability Engineering
+*   **5.3 DevSecOps na Prática**
 
-### O que são imagens Docker?
-As imagens Docker são "blueprints" que contêm tudo o que é necessário para rodar uma aplicação, como bibliotecas, dependências e código-fonte. Elas são imutáveis, garantindo consistência entre ambientes.
+## 6. Bancos de Dados
 
-### Criação de imagens com Dockerfile
-O **Dockerfile** é um arquivo de texto que define os passos para criar uma imagem. Exemplo:
-```dockerfile
-# Usar uma imagem base
-FROM node:16
-
-# Configurar diretório de trabalho
-WORKDIR /app
-
-# Copiar arquivos
-COPY package*.json ./
-
-# Instalar dependências
-RUN npm install
-
-# Copiar código-fonte
-COPY . .
-
-# Expõe a porta
-EXPOSE 3000
-
-# Comando para iniciar a aplicação
-CMD ["npm", "start"]
-```
-### Comandos e Funções
-
-- **FROM**: Define a imagem base (neste caso, Node.js).
-- **WORKDIR**: Define o diretório de trabalho.
-- **COPY**: Copia arquivos do host para o container.
-- **RUN**: Executa comandos no container durante a construção.
-- **EXPOSE**: Declara a porta usada pelo container.
-- **CMD**: Define o comando padrão ao iniciar o container.
-
-### Construindo Imagens
-
-```bash
-docker build -t minha-imagem:1.0 .
-```
-
-- `-t`: Nomeia a imagem.
-
-### Executando um Container
-
-```bash
-docker run -d -p 3000:3000 minha-imagem:1.0
-```
-
-- `-d`: Executa em segundo plano.
-- `-p`: Mapeia portas (host:container).
+*   **6.1 Bancos de Dados SQL**
+    *   6.1.1 PostgreSQL para Desenvolvedores
+    *   6.1.2 MySQL para Desenvolvedores
+*   **6.2 Bancos de Dados NoSQL**
+    *   6.2.1 MongoDB para Desenvolvedores
+    *   6.2.2 Redis para Desenvolvedores
 
 ---
 
-## Multistage Builds
+# Fundamentos do Desenvolvimento Web
 
-Permite criar imagens menores e mais seguras ao separar as etapas de build e execução.
+## 1.1 Controle de Versão com Git e GitHub
 
-### Exemplo:
+### 1.1.1 Fluxos de Trabalho com Git
 
-```dockerfile
-# Etapa 1: Build
-FROM node:16 AS builder
-WORKDIR /app
-COPY package*.json ./
-RUN npm install
-COPY . .
-RUN npm run build
+**O que é Git?**
 
-# Etapa 2: Execução
-FROM nginx:alpine
-COPY --from=builder /app/build /usr/share/nginx/html
-```
+Git é um sistema de controle de versão distribuído, amplamente usado no desenvolvimento de software para rastrear as mudanças em arquivos ao longo do tempo. Ele permite que vários desenvolvedores trabalhem no mesmo projeto simultaneamente, mantendo um histórico completo das modificações e facilitando a colaboração.
 
-- **AS builder**: Define um nome para a etapa.
-- **COPY --from=builder**: Copia arquivos da etapa anterior.
+**Principais Fluxos de Trabalho com Git:**
 
----
+*   **Gitflow:** Um dos fluxos mais populares, utilizando branches `main` (produção), `develop` (integração), `feature` (desenvolvimento de funcionalidades), `release` (preparação de release) e `hotfix` (correções de bugs).
 
-## Volumes e Redes
+    *   **Como usar:** Começa com a criação de uma branch `develop` a partir da `main`. Cada nova funcionalidade é desenvolvida em uma branch `feature` criada a partir da `develop`. Após concluída, a `feature` é mergeada de volta na `develop`. Para releases, uma branch `release` é criada a partir da `develop`, testada e, finalmente, mergeada na `main` e na `develop`.
+    *   **Para que serve:** Ideal para projetos com releases regulares e necessidade de controle rigoroso.
 
-### Volumes
+*   **GitHub Flow:** Um fluxo mais simples, com apenas uma branch `main` (ou `master`) e branches de `feature`.
 
-Volumes são usados para persistir dados gerados e utilizados pelos containers.
+    *   **Como usar:** Cada nova funcionalidade é desenvolvida em uma branch de `feature` criada a partir da `main`. Após concluída, a `feature` é mergeada de volta na `main`.
+    *   **Para que serve:** Mais adequado para projetos com deployments contínuos e ciclos de desenvolvimento mais curtos.
 
-### Criar um Volume
+*   **Trunk Based Development:** Todos os desenvolvedores trabalham diretamente na branch principal (`main` ou `trunk`). Mudanças menores são commitadas frequentemente, com testes automatizados garantindo a qualidade.
 
-```bash
-docker volume create meu-volume
-```
+    *   **Como usar:** Desenvolvedores trabalham diretamente na branch principal e commitam as mudanças com frequência, e faz deploy das mudanças, usando feature flag para controlar o acesso das funcionalidades.
+    *   **Para que serve**: Ideal para times com alta maturidade e forte cultura de testes automatizados.
 
-### Usar um Volume
+**Comandos Git Essenciais:**
 
-```bash
-docker run -d -v meu-volume:/dados busybox
-```
+*   `git init`: Inicializa um novo repositório Git.
+*   `git clone <url>`: Clona um repositório Git existente.
+*   `git add <arquivo>`: Adiciona um arquivo ao staging area.
+*   `git commit -m "<mensagem>"`: Commita as mudanças com uma mensagem descritiva.
+*   `git branch <nome>`: Cria uma nova branch.
+*   `git checkout <nome>`: Troca para uma branch específica.
+*   `git merge <nome>`: Mergeia uma branch na branch atual.
+*   `git push <remote> <branch>`: Envia as mudanças para o repositório remoto.
+*   `git pull <remote> <branch>`: Busca as mudanças do repositório remoto.
+*   `git stash`: Guarda as mudanças localmente sem commitá-las.
+*   `git rebase`: Reorganiza o histórico de commits de uma branch.
+*   `git tag`: Cria um ponto de marcação no histórico do seu repositório Git
 
-### Redes
+### 1.1.2 Colaboração em Projetos no GitHub
 
-As redes permitem comunicação entre containers ou entre containers e o host.
+**O que é GitHub?**
 
-### Listar Redes
+GitHub é uma plataforma de hospedagem de código para controle de versão usando Git. Ele oferece recursos para colaboração, como issues, pull requests e code reviews, tornando-se uma ferramenta indispensável para o desenvolvimento colaborativo.
 
-```bash
-docker network ls
-```
+**Como usar o GitHub:**
 
-### Criar uma Rede
+1.  **Criação de Repositórios:** Criar repositórios para armazenar o código do projeto.
+2.  **Clonagem e Fork:** Clonar repositórios existentes ou fazer fork (cópia) para contribuir com projetos open source.
+3.  **Branches:** Criar branches para desenvolver novas funcionalidades sem afetar a branch principal.
+4.  **Commits:** Commitar mudanças com mensagens claras e concisas.
+5.  **Pull Requests:** Abrir pull requests para solicitar a revisão de código e mergear as mudanças.
+6.  **Issues:** Usar issues para rastrear bugs, tarefas e melhorias.
+7.  **Projetos e Milestones:** Organizar o trabalho usando projetos e milestones.
 
-```bash
-docker network create minha-rede
-```
+**Recursos de colaboração:**
 
-### Conectar um Container a uma Rede
+*   **Issues:** Para relatar bugs, pedir novas funcionalidades e organizar o trabalho.
+*   **Pull Requests:** Para solicitar a revisão e merge de código.
+*   **Code Reviews:** Para revisar o código de outros desenvolvedores e garantir a qualidade do código.
+*   **Wikis:** Para documentar o projeto.
+*   **GitHub Actions:** Para automatizar workflows de CI/CD (Continuous Integration/Continuous Delivery).
 
-```bash
-docker network connect minha-rede <container_id>
-```
+### 1.1.3 Pull Requests e Code Reviews
 
----
+**Pull Requests (PRs):**
 
-## Docker Compose e Orquestração Local
+Pull requests são uma forma de propor mudanças no código e solicitar a revisão de outros membros da equipe antes de mergeá-las no branch principal.
 
-Docker Compose é uma ferramenta para definir e gerenciar aplicações multicontainer.
+**Como usar Pull Requests:**
 
-### Exemplo de Serviço Multicontainer
+1.  Criar uma branch para a nova funcionalidade ou correção.
+2.  Fazer as mudanças no código.
+3.  Commitar as mudanças na branch.
+4.  Enviar a branch para o repositório remoto.
+5.  Abrir um pull request na interface do GitHub, solicitando a revisão e o merge da branch para a branch principal.
 
-```yaml
-version: '3.8'
-services:
-  app:
-    build: .
-    ports:
-      - "3000:3000"
-    volumes:
-      - .:/app
-    depends_on:
-      - db
-  db:
-    image: postgres:13
-    environment:
-      POSTGRES_USER: user
-      POSTGRES_PASSWORD: password
-      POSTGRES_DB: mydb
-    volumes:
-      - db_data:/var/lib/postgresql/data
-volumes:
-  db_data:
-```
+**Code Reviews:**
 
-- **services**: Define os containers e suas configurações.
-- **depends_on**: Indica dependências entre serviços.
-- **volumes**: Define volumes persistentes.
+Code reviews são o processo de revisão do código proposto em um pull request por outros desenvolvedores.
 
-### Comandos Úteis
+**Objetivos do Code Review:**
 
-- **Subir serviços:**
+*   Garantir a qualidade do código.
+*   Detectar bugs e vulnerabilidades.
+*   Compartilhar conhecimento e boas práticas.
+*   Manter a consistência do código.
 
-```bash
-docker-compose up
-```
+**Ferramentas de Code Review:**
 
-- **Subir em segundo plano:**
+*   GitHub pull request interface
+*   GitLab merge request interface
+*   Bitbucket pull request interface
+*   Outras ferramentas de análise de código estático e revisão.
 
-```bash
-docker-compose up -d
-```
+**Melhores práticas de Code Review:**
 
-- **Parar serviços:**
+*   Foco na clareza e na lógica do código.
+*   Dar feedback construtivo e específico.
+*   Evitar discussões sobre estilo de código (pode ser automatizado com linters).
+*   Ser colaborativo e buscar consenso.
 
-```bash
-docker-compose down
-```
+## 1.2 Desenvolvimento Frontend
 
----
+### 1.2.1 HTML Semântico e Acessibilidade
 
-## Publicação e Gerenciamento de Imagens em Registries
+**HTML Semântico:**
 
-Registries são repositórios onde imagens Docker são armazenadas e compartilhadas. O mais comum é o Docker Hub.
+HTML semântico é o uso correto das tags HTML para descrever o significado e a estrutura do conteúdo. Em vez de usar tags genéricas como `<div>` e `<span>`, tags como `<header>`, `<nav>`, `<article>`, `<aside>` e `<footer>` são utilizadas para indicar a função dos elementos na página.
 
-### Login no Docker Hub
+**Vantagens do HTML Semântico:**
 
-```bash
-docker login
-```
+*   **SEO:** Os mecanismos de busca entendem melhor a estrutura do conteúdo, melhorando o posicionamento.
+*   **Acessibilidade:** Facilitando o uso por leitores de tela e outras tecnologias assistivas.
+*   **Manutenibilidade:** Tornando o código mais fácil de entender e manter.
 
-### Publicar uma Imagem
+**Acessibilidade (A11y):**
 
-```bash
-docker tag minha-imagem:1.0 meu-usuario/minha-imagem:1.0
-docker push meu-usuario/minha-imagem:1.0
-```
+Acessibilidade é a prática de tornar o conteúdo da web acessível para todas as pessoas, incluindo aquelas com deficiências visuais, auditivas, motoras ou cognitivas.
 
-### Baixar uma Imagem
+**Práticas de Acessibilidade:**
 
-```bash
-docker pull meu-usuario/minha-imagem:1.0
-```
+*   Utilizar HTML semântico corretamente.
+*   Fornecer texto alternativo para imagens (`alt`).
+*   Definir labels para formulários.
+*   Garantir contraste adequado entre cores.
+*   Usar ARIA (Accessible Rich Internet Applications) para elementos dinâmicos.
+*   Teste com leitores de tela.
 
----
+### 1.2.2 CSS Modules e Estilização
 
-## Recursos e Ferramentas Adicionais no Docker Desktop
+**O que são CSS Modules?**
 
-Permite criar, iniciar ou parar containers diretamente pelo painel do Docker Desktop, simplificando o uso.
+CSS Modules são uma técnica que permite o escopo local de estilos CSS, evitando conflitos de nomes em projetos grandes. Em vez de aplicar estilos globalmente, cada componente tem seus próprios estilos isolados.
 
-### Detectar Vulnerabilidades
+**Como usar CSS Modules:**
 
-```bash
-docker scout cves minha-imagem:1.0
-```
+1.  Criar arquivos CSS com a extensão `.module.css` ou `.module.scss`.
+2.  Importar os estilos como um objeto em seus componentes.
+3.  Acessar os estilos usando a notação de ponto.
 
-O Docker Desktop também pode habilitar o Kubernetes para orquestração de containers.
+**Exemplo:**
 
-### Ativar Kubernetes
+```css
+/* Component.module.css */
+.title {
+  font-size: 24px;
+  color: blue;
+}
 
-1. Acesse **Settings > Kubernetes**.
-2. Verifique o status:
+/* Component.jsx */
+import styles from './Component.module.css';
 
-```bash
-kubectl get nodes
-```
-
----
-
-## Estrutura de Projeto
-
-Organize seu projeto para facilitar o gerenciamento:
+function Component() {
+  return <h1 className={styles.title}>Título do Componente</h1>;
+}
 
 ```
-projeto/
-├── Dockerfile
-├── docker-compose.yml
-├── src/
-│   ├── index.js
-│   ├── app.js
-├── package.json
-├── .env
-```
 
-- **Dockerfile**: Define como criar a imagem.
-- **docker-compose.yml**: Define serviços.
-- **src/**: Código-fonte da aplicação.
-- **.env**: Armazena variáveis de ambiente sensíveis.
+**Vantagens dos CSS Modules:**
+
+*   Evitam conflitos de nomes de classes.
+*   Promovem a modularização e a reutilização de estilos.
+*   Tornam o código mais fácil de manter.
+*   Permitem a composição de estilos.
+
+**Outras Ferramentas de Estilização:**
+
+*   **Styled Components:** Uma biblioteca que permite escrever CSS dentro do JavaScript.
+*   **Tailwind CSS:** Um framework CSS utilitário que oferece classes pré-definidas para estilos.
+*   **Bootstrap:** Um framework CSS popular que oferece componentes reutilizáveis.
+
+### 1.2.3 React: Componentes, Hooks e Context API
+
+**O que é React?**
+
+React é uma biblioteca JavaScript para criar interfaces de usuário. Ele é baseado em componentes reutilizáveis, tornando o desenvolvimento de aplicações web mais organizado e eficiente.
+
+**Componentes:**
+
+Componentes são blocos de construção reutilizáveis de interfaces de usuário. Em React, os componentes são implementados como funções ou classes JavaScript.
+
+**Hooks:**
+
+Hooks são funções que permitem que componentes funcionais usem recursos do React, como estado, efeitos colaterais e contexto.
+
+**Principais Hooks:**
+
+*   `useState`: Para adicionar estado a componentes funcionais.
+*   `useEffect`: Para realizar efeitos colaterais (como requisições HTTP e manipulação do DOM).
+*   `useContext`: Para acessar dados do contexto.
+*   `useRef`: Para acessar elementos do DOM diretamente.
+*   `useMemo`: Para memoizar valores computados em funções.
+*   `useCallback`: Para memoizar funções para evitar criação de funções em loops e re-renderizações.
+
+**Context API:**
+
+Context API é um mecanismo para compartilhar dados entre componentes sem precisar passá-los por props. É útil para dados globais como temas, informações de usuário e configurações.
+
+**Como usar a Context API:**
+
+1.  Criar um context com `React.createContext()`.
+2.  Usar um `Provider` para envolver os componentes que precisam acessar os dados.
+3.  Usar o hook `useContext` nos componentes para consumir os dados.
+
+### 1.2.4 UX/Prototipação para Frontends
+
+**UX (User Experience):**
+
+UX é a disciplina que se concentra em melhorar a experiência do usuário ao interagir com um produto ou serviço. Inclui a pesquisa com usuários, o design de interfaces e a garantia de que o produto seja fácil de usar e atenda às necessidades dos usuários.
+
+**Prototipação:**
+
+Prototipação é o processo de criar versões simplificadas de interfaces de usuário para testar e refinar o design. Protótipos podem variar de esboços em papel a modelos interativos de alta fidelidade.
+
+**Ferramentas de Prototipação:**
+
+*   **Figma:** Uma ferramenta colaborativa para design de interfaces e prototipação.
+*   **Adobe XD:** Ferramenta da Adobe para prototipação e design.
+*   **Sketch:** Ferramenta de design para macOS.
+*   **InVision:** Ferramenta para prototipação e colaboração.
+
+**Princípios de UX:**
+
+*   **Usabilidade:** Tornar a interface fácil de usar e aprender.
+*   **Acessibilidade:** Garantir que a interface seja acessível para todos.
+*   **Navegação:** Criar uma navegação clara e intuitiva.
+*   **Layout:** Organizar o conteúdo de forma clara e lógica.
+*   **Consistência:** Manter a consistência visual e funcional em toda a interface.
+
+### 1.2.5 Electron: Desenvolvimento de Aplicativos Desktop
+
+**O que é Electron?**
+
+Electron é um framework para criar aplicações desktop usando tecnologias web (HTML, CSS e JavaScript). Ele permite que desenvolvedores web criem aplicações multiplataforma (Windows, macOS e Linux) usando o mesmo código.
+
+**Como funciona o Electron?**
+
+Electron usa o Chromium (o mesmo motor do Google Chrome) para renderizar a interface e o Node.js para acessar recursos do sistema operacional.
+
+**Componentes do Electron:**
+
+*   **Main Process:** O processo principal, responsável por criar as janelas e gerenciar os eventos.
+*   **Renderer Process:** Os processos de renderização, responsáveis por exibir as interfaces de usuário (uma por janela).
+*   **Node.js Integration:** Acesso a recursos do sistema operacional e APIs do Node.js.
+
+**Como desenvolver com Electron:**
+
+1.  Criar um projeto Node.js.
+2.  Instalar o Electron com `npm install electron`.
+3.  Criar um arquivo principal (`main.js`) para configurar a aplicação.
+4.  Criar arquivos HTML, CSS e JavaScript para a interface de usuário.
+5.  Usar as APIs do Electron para controlar as janelas, menus e outros recursos.
+
+**Vantagens do Electron:**
+
+*   Desenvolvimento multiplataforma.
+*   Uso de tecnologias web conhecidas.
+*   Grande comunidade e ecossistema.
+*   Acesso a recursos do sistema operacional.
+
+### 1.2.6 Frameworks CSS (Tailwind, Bootstrap)
+
+**Tailwind CSS:**
+
+Tailwind CSS é um framework CSS utilitário que oferece classes pré-definidas para estilos. Em vez de escrever CSS personalizado, você usa classes como `text-center`, `bg-blue-500` e `p-4` para estilizar elementos.
+
+**Vantagens do Tailwind:**
+
+*   Rápido desenvolvimento de interfaces.
+*   Facilidade de customização.
+*   Baseado em princípios de design.
+*   Manutenção facilitada.
+
+**Como usar Tailwind:**
+
+1.  Instalar o Tailwind com `npm install -D tailwindcss postcss autoprefixer`.
+2.  Configurar o Tailwind no arquivo `tailwind.config.js`.
+3.  Incluir o Tailwind no arquivo CSS.
+4.  Usar as classes utilitárias no HTML.
+
+**Bootstrap:**
+
+Bootstrap é um framework CSS que oferece componentes reutilizáveis para interfaces de usuário, incluindo botões, tabelas, formulários e barras de navegação.
+
+**Vantagens do Bootstrap:**
+
+*   Rápido desenvolvimento de interfaces.
+*   Componentes responsivos e prontos para uso.
+*   Grande comunidade e documentação.
+
+**Como usar Bootstrap:**
+
+1.  Incluir o CSS e o JavaScript do Bootstrap no seu projeto.
+2.  Usar os componentes e as classes do Bootstrap no HTML.
+
+**Comparação entre Tailwind e Bootstrap:**
+
+*   **Tailwind:** Mais flexível e customizável, mas requer mais conhecimento sobre o sistema de design.
+*   **Bootstrap:** Mais rápido para começar, mas menos customizável e pode resultar em interfaces menos únicas.
+
+### 1.3 Desenvolvimento Backend
+
+### 1.3.1 Node.js: Fundamentos e Ecossistema
+
+**O que é Node.js?**
+
+Node.js é um ambiente de tempo de execução JavaScript que permite executar código JavaScript fora de um navegador. Ele é construído sobre o motor JavaScript V8 do Google Chrome e é usado principalmente para criar aplicações de backend e servidores web.
+
+**Principais Características do Node.js:**
+
+*   **Não bloqueante e baseado em eventos:** Node.js usa um modelo de I/O não bloqueante para lidar com múltiplas requisições simultaneamente.
+*   **Single-threaded:** Node.js é single-threaded, mas utiliza um loop de eventos para lidar com múltiplas requisições de forma eficiente.
+*   **Grande ecossistema:** Node.js possui um vasto ecossistema de bibliotecas e frameworks disponíveis no npm (Node Package Manager).
+
+**Como Usar Node.js:**
+
+1.  Instalar o Node.js em sua máquina.
+2.  Criar um arquivo JavaScript (`.js`).
+3.  Executar o arquivo com `node <nome-do-arquivo>.js`.
+
+**npm (Node Package Manager):**
+
+npm é o gerenciador de pacotes do Node.js, usado para instalar, atualizar e gerenciar as dependências de um projeto.
+
+**Comandos npm:**
+
+*   `npm init`: Inicializa um novo projeto Node.js.
+*   `npm install <pacote>`: Instala um pacote.
+*   `npm update`: Atualiza os pacotes para a versão mais recente.
+*   `npm uninstall <pacote>`: Remove um pacote.
+*   `npm start`: Inicia a aplicação com o comando definido no `package.json`.
+
+**Frameworks Node.js:**
+
+*   **Express.js:** Framework minimalista e flexível para criar APIs e servidores web.
+*   **NestJS:** Framework para construir aplicações robustas e escaláveis.
+*   **Koa.js:** Framework mais leve e minimalista que o Express.
+*   **Hapi.js:** Framework para construir APIs e servidores de alta performance.
+
+### 1.3.2 JavaScript e TypeScript no Backend
+
+**JavaScript no Backend:**
+
+JavaScript é a linguagem principal do Node.js. Ele pode ser usado para criar APIs, servidores web e outras aplicações de backend.
+
+**TypeScript no Backend:**
+
+TypeScript é um superset do JavaScript que adiciona tipagem estática. Ele pode ser usado para melhorar a qualidade do código, detectar erros em tempo de compilação e facilitar a manutenção de grandes projetos.
+
+**Como usar TypeScript no Backend:**
+
+1.  Instalar o TypeScript com `npm install -g typescript`.
+2.  Criar arquivos TypeScript (`.ts`).
+3.  Compilar os arquivos TypeScript para JavaScript com `tsc <nome-do-arquivo>.ts`.
+4.  Usar o Node.js para executar o JavaScript gerado.
+
+**Vantagens do TypeScript:**
+
+*   Tipagem estática para detecção de erros em tempo de compilação.
+*   Melhora a legibilidade e a manutenibilidade do código.
+*   Melhora a segurança do código.
+*   Permite a refatoração de código com maior segurança.
+
+### 1.3.3 Django: Framework para Aplicações Web em Python
+
+**O que é Django?**
+
+Django é um framework web de alto nível escrito em Python, que segue o padrão MVC (Model-View-Controller). Ele é projetado para construir aplicações web de forma rápida e eficiente, com recursos como ORM (Object-Relational Mapping), templates, formulários e sistema de autenticação.
+
+**Características do Django:**
+
+*   **ORM (Object-Relational Mapping):** Permite interagir com o banco de dados usando objetos Python, sem precisar escrever SQL.
+*   **Templates:** Permite criar páginas HTML dinâmicas.
+*   **Formulários:** Facilita a criação e validação de formulários HTML.
+*   **Sistema de Autenticação:** Oferece um sistema de autenticação pronto para uso.
+*   **Admin:** Gera automaticamente uma interface administrativa para gerenciar os dados do banco de dados.
+
+**Como usar Django:**
+
+1.  Instalar o Python e o Django com `pip install django`.
+2.  Criar um novo projeto Django com `django-admin startproject <nome-do-projeto>`.
+3.  Criar um novo aplicativo Django com `python manage.py startapp <nome-do-aplicativo>`.
+4.  Definir os modelos no arquivo `models.py`.
+5.  Criar as migrações com `python manage.py makemigrations` e `python manage.py migrate`.
+6.  Definir as views no arquivo `views.py`.
+7.  Definir os URLs no arquivo `urls.py`.
+8.  Criar os templates HTML.
+9.  Executar o servidor com `python manage.py runserver`.
+
+**Vantagens do Django:**
+
+*   Desenvolvimento rápido.
+*   Segurança.
+*   Componentes reutilizáveis.
+*   Grande comunidade e documentação.
+*   Ideal para projetos de grande porte.
+
+### 1.4 Arquitetura Web
+
+### 1.4.1 Princípios de Arquitetura Web
+
+**Princípios de Arquitetura Web:**
+
+*   **Simplicidade:** Criar sistemas simples e fáceis de entender.
+*   **Modularidade:** Dividir o sistema em módulos independentes e reutilizáveis.
+*   **Reusabilidade:** Projetar componentes que possam ser reutilizados em diferentes partes do sistema.
+*   **Escalabilidade:** Projetar o sistema para lidar com o crescimento do tráfego e dos dados.
+*   **Performance:** Projetar o sistema para ser rápido e eficiente.
+*   **Segurança:** Garantir que o sistema seja seguro contra ataques e vulnerabilidades.
+*  **Manutenibilidade:** Facilitar a manutenção do sistema, permitindo que as equipes alterem o código sem quebrar tudo.
+*  **Testabilidade**: projetar um sistema que possa ser facilmente testado.
+*   **Disponibilidade:** Garantir que o sistema esteja disponível quando os usuários precisarem dele.
+*   **Resiliência**: Projetar um sistema que possa lidar com falhas e se recuperar rapidamente.
+
+**Padrões de Arquitetura Web:**
+
+*   **Microservices:** Dividir a aplicação em serviços independentes e desacoplados.
+*   **Monolith:** Uma aplicação única e coesa, com todos os componentes em um único lugar.
+*   **Serverless:** Utilizar serviços de computação em nuvem para executar a lógica de backend sem gerenciar servidores.
+
+### 1.4.2 Desacoplamento e Modularização
+
+**Desacoplamento:**
+
+Desacoplamento é a prática de reduzir a dependência entre diferentes componentes de um sistema. Componentes desacoplados são mais independentes e podem ser alterados sem afetar outros componentes.
+
+**Vantagens do Desacoplamento:**
+
+*   Flexibilidade: Componentes podem ser substituídos ou atualizados com facilidade.
+*   Reusabilidade: Componentes podem ser reutilizados em diferentes partes do sistema.
+*   Manutenibilidade: O código é mais fácil de manter e entender.
+*   Testabilidade: Componentes independentes podem ser testados com facilidade.
+
+**Técnicas de Desacoplamento:**
+
+*   Usar interfaces e abstrações.
+*   Usar eventos e filas de mensagens.
+*   Usar APIs bem definidas.
+*   Usar microsserviços.
+
+**Modularização:**
+
+Modularização é a prática de dividir o sistema em módulos independentes e reutilizáveis. Módulos são unidades lógicas de código que podem ser desenvolvidas e mantidas separadamente.
+
+**Vantagens da Modularização:**
+
+*   Organização: O código é mais fácil de entender e gerenciar.
+*   Reutilização: Módulos podem ser reutilizados em diferentes partes do sistema.
+*   Paralelização: Módulos podem ser desenvolvidos em paralelo por diferentes equipes.
+*   Testabilidade: Módulos independentes podem ser testados com facilidade.
+
+**Técnicas de Modularização:**
+
+*   Usar módulos de código (arquivos separados) com responsabilidades definidas.
+*   Usar pacotes (diretórios com arquivos relacionados) para organizar o código.
+*   Usar componentes reutilizáveis.
+
+### 1.4.3 Escalabilidade e Performance
+
+**Escalabilidade:**
+
+Escalabilidade é a capacidade de um sistema lidar com um aumento do tráfego e dos dados sem perda de performance ou disponibilidade. Existem dois tipos principais de escalabilidade:
+
+*   **Escalabilidade Vertical:** Aumentar a capacidade dos recursos de um único servidor (ex: mais CPU, mais RAM, mais disco).
+*   **Escalabilidade Horizontal:** Adicionar mais servidores ao sistema para distribuir a carga.
+
+**Técnicas de Escalabilidade:**
+
+*   **Load Balancing:** Distribuir o tráfego entre múltiplos servidores.
+*   **Caching:** Armazenar dados em cache para reduzir o tempo de acesso.
+*   **Database Replication:** Replicar os dados em múltiplos servidores para garantir disponibilidade e desempenho.
+*   **Microservices:** Distribuir a aplicação em serviços menores que podem ser escalados individualmente.
+
+**Performance:**
+
+Performance é a medida da velocidade e da eficiência de um sistema. Um sistema de alto desempenho responde rapidamente às solicitações e utiliza os recursos de forma eficiente.
+
+**Técnicas de Otimização de Performance:**
+
+*   Otimizar as queries no banco de dados.
+*   Usar cache para reduzir o tempo de acesso aos dados.
+*   Minificar arquivos CSS e JavaScript.
+*   Usar compressão de dados (gzip).
+*   Usar CDN (Content Delivery Network).
+*   Otimizar imagens.
+*   Usar técnicas de lazy loading.

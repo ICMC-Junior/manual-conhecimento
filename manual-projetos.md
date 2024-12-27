@@ -5,87 +5,223 @@
 ## 1. Fundamentos do Desenvolvimento Web
 
 *   **1.1 Controle de Versão com Git e GitHub**
-    *   1.1.1 Fluxos de Trabalho com Git
-    *   1.1.2 Colaboração em Projetos no GitHub
-    *   1.1.3 Pull Requests e Code Reviews
+    *   1.1.1 Fluxos de Trabalho com Git: Git Flow, Trunk-Based Development e estratégias de branching.
+    *   1.1.2 Colaboração em Projetos no GitHub: Issues, Projects e Wiki para documentação colaborativa.
+    *   1.1.3 Pull Requests e Code Reviews: Boas práticas, ferramentas de automação (GitHub Actions) e análise de qualidade de código.
+
 *   **1.2 Desenvolvimento Frontend**
-    *   1.2.1 HTML Semântico e Acessibilidade
-    *   1.2.2 CSS Modules e Estilização
-    *   1.2.3 React: Componentes, Hooks e Context API
-    *   1.2.4 UX/Prototipação para Frontends
-    *   1.2.5 Electron: Desenvolvimento de Aplicativos Desktop
-    *   1.2.6 Frameworks CSS (Tailwind, Bootstrap)
+    *   1.2.1 HTML Semântico e Acessibilidade: Uso avançado de landmarks, ARIA e melhores práticas para conformidade com WCAG 2.1.
+    *   1.2.2 CSS Modules e Estilização: Escopo de estilos, integração com JavaScript frameworks e Atomic Design.
+    *   1.2.3 React: Componentes funcionais, Hooks, Context API, Suspense e React Server Components.
+    *   1.2.4 UX/Prototipação para Frontends: Ferramentas como Figma e integração de Design Systems.
+    *   1.2.5 Frameworks CSS: Tailwind CSS para design utilitário e Bootstrap para prototipação rápida.
+
 *   **1.3 Desenvolvimento Backend**
-    *   1.3.1 Node.js: Fundamentos e Ecossistema
-    *   1.3.2 JavaScript e TypeScript no Backend
-    *   1.3.3 Django: Framework para Aplicações Web em Python
-*  **1.4 Arquitetura Web**
-    *   1.4.1 Princípios de Arquitetura Web
-    *   1.4.2 Desacoplamento e Modularização
-    *   1.4.3 Escalabilidade e Performance
+    *   1.3.1 Node.js: Fundamentos do runtime, uso do npm e frameworks como Express e Fastify.
+    *   1.3.2 JavaScript e TypeScript no Backend: Tipagem estática com TypeScript, integração de APIs e ferramentas ORM (Sequelize, TypeORM).
+    *   1.3.3 Django: Criação de REST APIs com Django REST Framework, integração com sistemas de autenticação (OAuth2, JWT).
 
-## 2. Containers e Orquestração
+*   **1.4 Arquitetura Web**
+    *   1.4.1 Princípios de Arquitetura Web: REST vs GraphQL, arquitetura de microsserviços e Serverless.
+    *   1.4.2 Desacoplamento e Modularização: Design orientado a eventos e uso de filas (RabbitMQ, Kafka).
+    *   1.4.3 Escalabilidade e Performance:
+        * Cache (Redis, Memcached).
+        * CDN (Content Delivery Network).
+        * Melhoria de TTFB (Time to First Byte) e SEO técnico.
 
-*   **2.1 Docker e Containers**
-    *   2.1.1 Docker na Prática
-    *   2.1.2 Docker para Desenvolvimento
-    *   2.1.3 Docker para Produção
-    *   2.1.4 Containers Deep Dive
+*   **1.5 Ferramentas de Desenvolvimento Modernas**
+    *   1.5.1 Webpack, Vite e Bundlers Modernos: Configuração e otimização de aplicações.
+    *   1.5.2 CI/CD: Automação de pipelines com GitHub Actions, Jenkins e AWS CodePipeline.
+    *   1.5.3 Monitoramento e Observabilidade: Integração com ferramentas como New Relic, Sentry e Elastic Stack.
 
-## 3. APIs e Comunicação
+*   **1.6 Segurança em Aplicações Web**
+    *   1.6.1 Fundamentos de Segurança: OWASP Top 10, proteção contra XSS, CSRF e SQL Injection.
+    *   1.6.2 Autenticação e Autorização: OAuth2, OpenID Connect e Single Sign-On.
+    *   1.6.3 HTTPS e Certificados: Uso de TLS/SSL e automação com Let's Encrypt.
 
-*   **3.1 APIs: Design e Implementação**
-    *   3.1.1 REST e Níveis de Maturidade na Prática
-    *   3.1.2 gRPC
-    *   3.1.3 Design de APIs
-    *   3.1.4 API Gateway
+## 2. Fundamentos do Desenvolvimento Mobile
 
-## 4. Qualidade de Código e Arquitetura
+*   **2.1 Desenvolvimento de Interfaces Mobile**
+    *   2.1.1 Design Responsivo e Acessibilidade: Padrões de UI/UX para Android e iOS, WCAG 2.1 e Material Design.
+    *   2.1.2 Flutter: Widgets reutilizáveis, FlutterFlow e animações customizadas.
+    *   2.1.3 React Native: Hooks, Context API e uso de bibliotecas nativas.
+    *   2.1.4 SwiftUI e Jetpack Compose: Frameworks declarativos para criação de interfaces nativas.
+    *   2.1.5 Prototipação com Figma e Adobe XD: Criação de fluxos e integração com desenvolvedores.
 
-*   **4.1 Testes Automatizados**
-    *   4.1.1 TDD - Test Driven Development
-    *   4.1.2 Testes avançados: Padrões, tipos e ferramentas
-    *   4.1.3 Testcontainers
-*   **4.2 SOLID e Design Patterns**
-    *   4.2.1 SOLID na Prática - Princípios e Aplicações em Design de Software
-    *   4.2.2 Design Patterns na Prática - Gang of Four e Aplicações Reais
-*   **4.3 Arquiteturas de Software**
-    *   4.3.1 Arquitetura em Camadas MVC
-    *   4.3.2 Arquitetura Hexagonal e Clean Architecture
-    *   4.3.3 Arquitetura Multi-Tenancy
-*  **4.4 Domain Driven Design, Microsserviços e Mensageria**
-    *   4.4.1 Domain-Driven Design (DDD)
-    *   4.4.2 Domain-Driven Design e Arquitetura baseada em eventos
-    *   4.4.3 RabbitMQ
-    *   4.4.4 Arquitetura baseada em microsserviços
-    *   4.4.5 Apache Kafka
-*   **4.5 Sistemas Legados e Monólitos**
-    *   4.5.1 Criação de monolitos modulares
-    *   4.5.2 Modernização de sistemas legados
-    *   4.5.3 Decomposição de sistemas monolíticos para microsserviços
+*   **2.2 Desenvolvimento de Aplicativos Mobile**
+    *   2.2.1 Desenvolvimento Nativo: Swift para iOS, Kotlin para Android.
+    *   2.2.2 Gerenciamento de Estado: Redux, MobX, Provider e Riverpod.
+    *   2.2.3 Integração com APIs e Serviços: REST, GraphQL e WebSockets.
 
-## 5. DevOps e SRE
+*   **2.3 Arquitetura Mobile**
+    *   2.3.1 Padrões de Projeto: MVC, MVVM, Clean Architecture.
+    *   2.3.2 Modularização: Separação de camadas e uso de pacotes.
+    *   2.3.3 Escalabilidade:
+        * Otimização de uso de memória e processamento.
+        * Suporte para múltiplos dispositivos e versões de sistema operacional.
 
-*   **5.1 Kubernetes, CI/CD e Infra as Code**
-    *   5.1.1 Kubernetes
-    *   5.1.2 Helm
-    *   5.1.3 Terraform
-    *   5.1.4 Pipelines, GitOps e ArgoCD
-*   **5.2 SRE, Monitoramento e Observabilidade**
-    *   5.2.1 Observabilidade
-    *   5.2.2 Prometheus e Grafana
-    *   5.2.3 OpenTelemetry
-    *   5.2.4 Site Reliability Engineering
-*   **5.3 DevSecOps na Prática**
+*   **2.4 Ferramentas de Desenvolvimento Modernas**
+    *   2.4.1 Android Studio e Xcode: Ambientes de desenvolvimento para apps nativos.
+    *   2.4.2 Debugging e Monitoramento: React Native Debugger, Flutter DevTools e Firebase Crashlytics.
+    *   2.4.3 Testes Automatizados:
+        * Unitários com XCTest e JUnit.
+        * UI com Espresso, Appium e Detox.
 
-## 6. Bancos de Dados
+*   **2.5 Publicação e Integração**
+    *   2.5.1 App Stores: Requisitos e práticas para publicação na Google Play e App Store.
+    *   2.5.2 CI/CD em Mobile: Configuração de pipelines com Bitrise, Fastlane e GitHub Actions.
+    *   2.5.3 Monitoramento Pós-Lançamento: Ferramentas de analytics (Firebase, Amplitude) e feedback de usuários.
 
-*   **6.1 Bancos de Dados SQL**
-    *   6.1.1 PostgreSQL para Desenvolvedores
-    *   6.1.2 MySQL para Desenvolvedores
-*   **6.2 Bancos de Dados NoSQL**
-    *   6.2.1 MongoDB para Desenvolvedores
-    *   6.2.2 Redis para Desenvolvedores
+*   **2.6 Segurança em Aplicações Mobile**
+    *   2.6.1 Proteção de Dados: Criptografia local (Keychain, Keystore) e armazenamento seguro (SQLite, Realm).
+    *   2.6.2 Autenticação e Autorização: OAuth2, biometria e autenticação de múltiplos fatores (MFA).
+    *   2.6.3 Boas Práticas de Segurança: Prevenção contra ataques como Reverse Engineering e uso de HTTPS em comunicações.
+
+## 3. Containers e Orquestração
+
+*   **3.1 Docker e Containers**
+    *   3.1.1 Fundamentos de Containers: Conceitos básicos e funcionamento.
+    *   3.1.2 Docker na Prática: Criação, execução e gerenciamento de containers.
+    *   3.1.3 Docker Compose: Orquestração de múltiplos containers para desenvolvimento local.
+    *   3.1.4 Docker para Produção: Imagens otimizadas, segurança e práticas de deploy.
+
+*   **3.2 Kubernetes**
+    *   3.2.1 Fundamentos do Kubernetes: Clusters, nós, pods e namespaces.
+    *   3.2.2 Deploy e Escalabilidade: Deployment, StatefulSets e escalabilidade automática (Horizontal Pod Autoscaler).
+    *   3.2.3 Configuração e Gerenciamento: ConfigMaps, Secrets e volumes persistentes.
+    *   3.2.4 Networking no Kubernetes: Ingress, Load Balancers e Service Meshes (Istio, Linkerd).
+
+*   **3.3 Ferramentas de Orquestração e Infraestrutura**
+    *   3.3.1 Helm: Gerenciamento de pacotes no Kubernetes.
+    *   3.3.2 ArgoCD e Flux: GitOps para entrega contínua.
+    *   3.3.3 Terraform e Pulumi: Infraestrutura como código (IaC) para provisionamento e gerenciamento.
+
+*   **3.4 Segurança e Observabilidade**
+    *   3.4.1 Segurança de Containers: Scanning de imagens, runtime security e ferramentas como Trivy e Falco.
+    *   3.4.2 Observabilidade em Kubernetes: Integração com Prometheus, Grafana e OpenTelemetry.
+    *   3.4.3 Monitoramento de Logs: Uso de Fluentd, Loki e Elasticsearch.
+    *   3.4.4 Políticas de Controle: Network Policies e RBAC (Role-Based Access Control).
+
+*   **3.5 Aplicações Avançadas**
+    *   3.5.1 Serverless em Kubernetes: Knative e OpenFaaS.
+    *   3.5.2 Multi-Cluster e Híbridos: Gestão de ambientes com ferramentas como Anthos e Rancher.
+
+## 4. APIs e Comunicação
+
+*   **4.1 APIs: Design e Implementação**
+    *   4.1.1 Fundamentos de APIs: Conceitos de REST, gRPC e WebSockets.
+    *   4.1.2 Design de APIs RESTful: Padrões de endpoints, versionamento e melhores práticas.
+    *   4.1.3 Níveis de Maturidade de Richardson: Implementação prática para APIs escaláveis.
+    *   4.1.4 APIs GraphQL: Introdução, vantagens, ferramentas e uso em projetos modernos.
+
+*   **4.2 Protocolos e Comunicação**
+    *   4.2.1 Protocolos HTTP/2 e HTTP/3: Melhorias de performance e segurança.
+    *   4.2.2 WebSockets: Comunicação bidirecional em tempo real.
+    *   4.2.3 gRPC: Comunicação eficiente e de baixa latência para microsserviços.
+    *   4.2.4 Mensageria: Uso de RabbitMQ, Kafka e Pub/Sub para sistemas distribuídos.
+
+*   **4.3 Segurança em APIs**
+    *   4.3.1 Autenticação e Autorização: Implementação de OAuth2, OpenID Connect e JWT.
+    *   4.3.2 Controle de CORS: Configurações para segurança e integração entre domínios.
+    *   4.3.3 Rate Limiting e Throttling: Proteção contra abusos e ataques DDoS.
+    *   4.3.4 Segurança de Dados: Criptografia em trânsito e at-rest, e conformidade com GDPR e LGPD.
+
+*   **4.4 Ferramentas e Observabilidade**
+    *   4.4.1 Postman e Insomnia: Teste e documentação de APIs.
+    *   4.4.2 OpenAPI/Swagger: Criação e manutenção de contratos de APIs.
+    *   4.4.3 Monitoramento e Logs: Integração com ferramentas como Elastic Stack, Prometheus e Sentry.
+    *   4.4.4 Métricas de Performance: Análise de latência, TTFB e throughput de APIs.
+
+*   **4.5 APIs Avançadas e Aplicações**
+    *   4.5.1 APIs Serverless: Integração com AWS Lambda, Azure Functions e Google Cloud Functions.
+    *   4.5.2 APIs Event-Driven: Uso de eventos e filas para comunicação assíncrona.
+    *   4.5.3 APIs Federadas e Microsserviços: GraphQL Federation e BFF (Backend for Frontend).
+
+## 5. Qualidade de Código e Arquitetura
+
+*   **5.1 Testes Automatizados**
+    *   5.1.1 TDD - Test Driven Development
+    *   5.1.2 Testes avançados: Padrões, tipos e ferramentas
+    *   5.1.3 Testcontainers
+*   **5.2 SOLID e Design Patterns**
+    *   5.2.1 SOLID na Prática - Princípios e Aplicações em Design de Software
+    *   5.2.2 Design Patterns na Prática - Gang of Four e Aplicações Reais
+*   **5.3 Arquiteturas de Software**
+    *   5.3.1 Arquitetura em Camadas MVC
+    *   5.3.2 Arquitetura Hexagonal e Clean Architecture
+    *   5.3.3 Arquitetura Multi-Tenancy
+*  **5.4 Domain Driven Design, Microsserviços e Mensageria**
+    *   5.4.1 Domain-Driven Design (DDD)
+    *   5.4.2 Domain-Driven Design e Arquitetura baseada em eventos
+    *   5.4.3 RabbitMQ
+    *   5.4.4 Arquitetura baseada em microsserviços
+    *   5.4.5 Apache Kafka
+*   **5.5 Sistemas Legados e Monólitos**
+    *   5.5.1 Criação de monolitos modulares
+    *   5.5.2 Modernização de sistemas legados
+    *   5.5.3 Decomposição de sistemas monolíticos para microsserviços
+
+## 6. DevOps e SRE
+
+*   **6.1 Kubernetes, CI/CD e Infraestrutura como Código**
+    *   6.1.1 Fundamentos de Kubernetes: Estrutura de clusters, pods, serviços e namespaces.
+    *   6.1.2 Deploy e Gerenciamento de Aplicações no Kubernetes: Workloads como Deployments, StatefulSets e DaemonSets.
+    *   6.1.3 Helm: Gerenciamento de pacotes e automação de deploys no Kubernetes.
+    *   6.1.4 Terraform e Pulumi: Provisionamento e automação de infraestrutura como código (IaC).
+    *   6.1.5 CI/CD Moderno: Configuração de pipelines com Jenkins, GitHub Actions, GitLab CI e CircleCI.
+    *   6.1.6 GitOps com ArgoCD e Flux: Práticas para automação de entrega contínua.
+
+*   **6.2 SRE, Monitoramento e Observabilidade**
+    *   6.2.1 Fundamentos de Observabilidade: Logs, métricas e traces distribuídos.
+    *   6.2.2 Prometheus e Grafana: Coleta, visualização e alertas baseados em métricas.
+    *   6.2.3 OpenTelemetry: Integração e rastreamento distribuído para microsserviços.
+    *   6.2.4 Site Reliability Engineering (SRE): Práticas para escalabilidade, SLAs e melhoria contínua.
+    *   6.2.5 Ferramentas de Monitoramento: Elastic Stack, Datadog, New Relic e Splunk.
+
+*   **6.3 DevSecOps na Prática**
+    *   6.3.1 Segurança na Pipeline CI/CD: Scanners de vulnerabilidades e verificação de qualidade.
+    *   6.3.2 Segurança em Containers e Kubernetes: Scanning de imagens (Trivy, Clair) e políticas (OPA, Kyverno).
+    *   6.3.3 Automação de Patches: Atualizações de segurança contínuas.
+    *   6.3.4 Compliance e Auditoria: Políticas e ferramentas para conformidade (GDPR, LGPD, ISO/IEC 27001).
+
+*   **6.4 Práticas Avançadas de DevOps**
+    *   6.4.1 Arquiteturas de Resiliência: Chaos Engineering com ferramentas como Gremlin e Chaos Mesh.
+    *   6.4.2 Gerenciamento Multi-Cloud e Híbrido: Kubernetes Federation, Anthos e OpenShift.
+    *   6.4.3 Automação com Ansible e Chef: Gerenciamento de configuração e orquestração.
+    *   6.4.4 Service Meshes: Implementação com Istio e Linkerd para microsserviços.
+
+## 7. Bancos de Dados
+
+*   **7.1 Bancos de Dados SQL**
+    *   7.1.1 Fundamentos de Bancos Relacionais: Modelagem de dados, normalização e design de esquemas.
+    *   7.1.2 PostgreSQL: Consultas avançadas, índices, particionamento e extensões (PostGIS, TimescaleDB).
+    *   7.1.3 MySQL: Otimização de consultas, uso de triggers, stored procedures e replicação.
+    *   7.1.4 Transações e ACID: Controle de concorrência, bloqueios e recuperação de falhas.
+
+*   **7.2 Bancos de Dados NoSQL**
+    *   7.2.1 Fundamentos de Bancos NoSQL: Modelagem flexível, CAP theorem e casos de uso.
+    *   7.2.2 MongoDB: Operações CRUD, agregações, índices geoespaciais e replicação.
+    *   7.2.3 Redis: Estruturas de dados otimizadas, pub/sub e caching distribuído.
+    *   7.2.4 Cassandra: Armazenamento escalável, particionamento e consistência eventual.
+
+*   **7.3 Bancos de Dados Emergentes**
+    *   7.3.1 Time-Series Databases: Uso de InfluxDB e TimescaleDB para dados temporais.
+    *   7.3.2 Bancos Orientados a Grafos: Neo4j e Amazon Neptune para modelagem de grafos complexos.
+    *   7.3.3 Bancos de Dados Multimodelo: ArangoDB e Couchbase para dados heterogêneos.
+    *   7.3.4 Bancos para Big Data: Apache HBase e Google Bigtable para dados em larga escala.
+
+*   **7.4 Performance e Escalabilidade**
+    *   7.4.1 Sharding e Particionamento: Estratégias para dividir e distribuir dados.
+    *   7.4.2 Replicação e Alta Disponibilidade: Master-slave, master-master e clusters distribuídos.
+    *   7.4.3 Otimização de Consultas: Uso de índices, planos de execução e tuning de bancos.
+    *   7.4.4 Monitoramento de Bancos de Dados: Ferramentas como PMM (Percona Monitoring and Management) e DataDog.
+
+*   **7.5 Segurança em Bancos de Dados**
+    *   7.5.1 Criptografia: Dados em trânsito e em repouso.
+    *   7.5.2 Controle de Acesso: Usuários, permissões e auditorias.
+    *   7.5.3 Backup e Recuperação: Estratégias de snapshot, incremental e full backup.
+    *   7.5.4 Conformidade e Compliance: GDPR, LGPD e melhores práticas de governança.
+
 
 ---
 
@@ -93,28 +229,66 @@
 
 ## 1.1 Controle de Versão com Git e GitHub
 
-### 1.1.1 Fluxos de Trabalho com Git
+O controle de versão é uma prática essencial no desenvolvimento de software moderno, permitindo que equipes colaborem eficientemente, rastreiem alterações no código e gerenciem histórico de modificações. O Git é uma das ferramentas mais populares para controle de versão, e o GitHub é uma plataforma amplamente usada para hospedar repositórios e facilitar a colaboração. Usamos essa ferramenta para:
 
-**O que é Git?**
+- **Criação de Repositórios:** Criar repositórios para armazenar o código do projeto.
+- **Clonagem e Fork:** Clonar repositórios existentes ou fazer fork (cópia) para contribuir com projetos open source.
+- **Branches:** Criar branches para desenvolver novas funcionalidades sem afetar a branch principal.
+- **Commits:** Commitar mudanças com mensagens claras e concisas.
+- **Pull Requests:** Abrir pull requests para solicitar a revisão de código e mergear as mudanças.
+- **Issues:** Usar issues para rastrear bugs, tarefas e melhorias.
+- **Projetos e Milestones:** Organizar o trabalho usando projetos e milestones.
 
-Git é um sistema de controle de versão distribuído, amplamente usado no desenvolvimento de software para rastrear as mudanças em arquivos ao longo do tempo. Ele permite que vários desenvolvedores trabalhem no mesmo projeto simultaneamente, mantendo um histórico completo das modificações e facilitando a colaboração.
+### 1.1.1 Fluxos de Trabalho com Git: Git Flow, Trunk-Based Development e estratégias de branching
 
-**Principais Fluxos de Trabalho com Git:**
+### Git Flow
+O Git Flow é uma abordagem de gerenciamento de ramificações projetada para projetos com ciclos de vida bem definidos, como o desenvolvimento de versões. Ele organiza o repositório em diferentes tipos de branches:
 
-*   **Gitflow:** Um dos fluxos mais populares, utilizando branches `main` (produção), `develop` (integração), `feature` (desenvolvimento de funcionalidades), `release` (preparação de release) e `hotfix` (correções de bugs).
+**Como usar:** Cada nova funcionalidade é desenvolvida em uma branch de `feature` criada a partir da `main`. Após concluída, a `feature` é mergeada de volta na `main`.
 
-    *   **Como usar:** Começa com a criação de uma branch `develop` a partir da `main`. Cada nova funcionalidade é desenvolvida em uma branch `feature` criada a partir da `develop`. Após concluída, a `feature` é mergeada de volta na `develop`. Para releases, uma branch `release` é criada a partir da `develop`, testada e, finalmente, mergeada na `main` e na `develop`.
-    *   **Para que serve:** Ideal para projetos com releases regulares e necessidade de controle rigoroso.
+**Para que serve:** Mais adequado para projetos com deployments contínuos e ciclos de desenvolvimento mais curtos.
 
-*   **GitHub Flow:** Um fluxo mais simples, com apenas uma branch `main` (ou `master`) e branches de `feature`.
+- **Main (ou Master):** Contém o código estável e pronto para produção.
+- **Develop:** Contém o código integrado das features, pronto para ser liberado.
+- **Feature Branches:** Criados a partir do branch develop para trabalhar em novas funcionalidades.
+- **Release Branches:** Criados a partir do branch develop para preparar uma nova versão.
+- **Hotfix Branches:** Criados a partir do branch main para corrigir problemas em produção.
 
-    *   **Como usar:** Cada nova funcionalidade é desenvolvida em uma branch de `feature` criada a partir da `main`. Após concluída, a `feature` é mergeada de volta na `main`.
-    *   **Para que serve:** Mais adequado para projetos com deployments contínuos e ciclos de desenvolvimento mais curtos.
 
-*   **Trunk Based Development:** Todos os desenvolvedores trabalham diretamente na branch principal (`main` ou `trunk`). Mudanças menores são commitadas frequentemente, com testes automatizados garantindo a qualidade.
+### Exemplo de Comandos:
+```bash
+# Criar uma branch de feature
+git checkout -b feature/nova-funcionalidade develop
 
-    *   **Como usar:** Desenvolvedores trabalham diretamente na branch principal e commitam as mudanças com frequência, e faz deploy das mudanças, usando feature flag para controlar o acesso das funcionalidades.
-    *   **Para que serve**: Ideal para times com alta maturidade e forte cultura de testes automatizados.
+# Fazer merge da feature para develop
+git checkout develop
+git merge feature/nova-funcionalidade
+
+# Criar uma branch de release
+git checkout -b release/1.0 develop
+
+# Fazer merge da release para main
+git checkout main
+git merge release/1.0
+```
+
+### Trunk-Based Development
+O Trunk-Based Development é uma abordagem mais simples e ágil, onde os desenvolvedores fazem commits frequentes diretamente na branch principal (**trunk**). É ideal para equipes pequenas e projetos que precisam de entregas contínuas.
+
+#### Exemplo de Comandos:
+```bash
+# Fazer commit diretamente na branch main
+git checkout main
+git pull origin main
+git add .
+git commit -m "Implementa nova funcionalidade"
+git push origin main
+```
+
+### Estratégias de Branching
+- **Feature Branching:** Cada funcionalidade tem sua própria branch, promovendo isolamento.
+- **Task Branching:** Baseado em tarefas do sistema de gestão (ex.: Jira ou Trello).
+- **Release Branching:** Branches criadas para cada versão de software.
 
 **Comandos Git Essenciais:**
 
@@ -131,68 +305,97 @@ Git é um sistema de controle de versão distribuído, amplamente usado no desen
 *   `git rebase`: Reorganiza o histórico de commits de uma branch.
 *   `git tag`: Cria um ponto de marcação no histórico do seu repositório Git
 
-### 1.1.2 Colaboração em Projetos no GitHub
+## 1.1.2 Colaboração em Projetos no GitHub: Issues, Projects e Wiki para documentação colaborativa
 
-**O que é GitHub?**
+### Issues
+As issues permitem rastrear bugs, solicitações de funcionalidades e outras tarefas relacionadas ao projeto. Elas oferecem:
+- **Título e Descrição:** Para descrever claramente o problema ou solicitação.
+- **Labels:** Para categorizar as issues (ex.: bug, enhancement).
+- **Assign:** Para designar responsáveis.
+- **Milestones:** Para agrupar issues em objetivos maiores.
 
-GitHub é uma plataforma de hospedagem de código para controle de versão usando Git. Ele oferece recursos para colaboração, como issues, pull requests e code reviews, tornando-se uma ferramenta indispensável para o desenvolvimento colaborativo.
+#### Exemplo de Uso:
+1. Criar uma nova issue pelo botão "New Issue".
+2. Adicionar descrição e labels, como **bug** ou **enhancement**.
+3. Acompanhar o progresso e fechar a issue após resolvê-la.
 
-**Como usar o GitHub:**
+### Projects
+Os projetos no GitHub ajudam a organizar tarefas de maneira visual usando quadros Kanban. Podem ser usados para:
+- **Planejar Sprints:** Adicionar issues e pull requests como cards.
+- **Rastrear Progresso:** Mover cards entre colunas (ex.: To Do, In Progress, Done).
 
-1.  **Criação de Repositórios:** Criar repositórios para armazenar o código do projeto.
-2.  **Clonagem e Fork:** Clonar repositórios existentes ou fazer fork (cópia) para contribuir com projetos open source.
-3.  **Branches:** Criar branches para desenvolver novas funcionalidades sem afetar a branch principal.
-4.  **Commits:** Commitar mudanças com mensagens claras e concisas.
-5.  **Pull Requests:** Abrir pull requests para solicitar a revisão de código e mergear as mudanças.
-6.  **Issues:** Usar issues para rastrear bugs, tarefas e melhorias.
-7.  **Projetos e Milestones:** Organizar o trabalho usando projetos e milestones.
+#### Exemplo de Configuração:
+1. Criar um novo Project.
+2. Adicionar colunas: "To Do", "In Progress" e "Done".
+3. Vincular issues ou pull requests aos cards.
 
-**Recursos de colaboração:**
+### Wiki
+A Wiki é ideal para documentação colaborativa, como:
+- Guia de instalação e configuração.
+- Descrição de APIs.
+- Regras de contribuição.
 
-*   **Issues:** Para relatar bugs, pedir novas funcionalidades e organizar o trabalho.
-*   **Pull Requests:** Para solicitar a revisão e merge de código.
-*   **Code Reviews:** Para revisar o código de outros desenvolvedores e garantir a qualidade do código.
-*   **Wikis:** Para documentar o projeto.
-*   **GitHub Actions:** Para automatizar workflows de CI/CD (Continuous Integration/Continuous Delivery).
+#### Exemplo de Configuração:
+1. Acessar a aba **Wiki** no repositório.
+2. Criar páginas para cada seção necessária (ex.: "Getting Started", "API Documentation").
 
-### 1.1.3 Pull Requests e Code Reviews
+## 1.1.3 Pull Requests e Code Reviews
 
-**Pull Requests (PRs):**
+### Pull Requests
+Pull Requests (PRs) permitem integrar alterações de branches para branches principais de forma revisável. Incluem:
+- **Descrição:** Explicação das alterações.
+- **Reviewers:** Membros da equipe designados para revisar o código.
+- **Status Checks:** Integrações como testes automatizados (ex.: GitHub Actions).
 
-Pull requests são uma forma de propor mudanças no código e solicitar a revisão de outros membros da equipe antes de mergeá-las no branch principal.
+#### Exemplo de Fluxo:
+1. Criar uma branch de feature:
+   ```bash
+   git checkout -b feature/nova-funcionalidade
+   ```
+2. Fazer commit das alterações:
+   ```bash
+   git add .
+   git commit -m "Implementa nova funcionalidade"
+   git push origin feature/nova-funcionalidade
+   ```
+3. Criar um Pull Request no GitHub e adicionar reviewers.
 
-**Como usar Pull Requests:**
+### Code Reviews
+O code review é essencial para manter a qualidade do código. Boas práticas incluem:
+- **Comentários Construtivos:** Sugestões claras para melhorar o código.
+- **Checklist de Revisão:** Garantir que o código atende aos padrões e é testado.
 
-1.  Criar uma branch para a nova funcionalidade ou correção.
-2.  Fazer as mudanças no código.
-3.  Commitar as mudanças na branch.
-4.  Enviar a branch para o repositório remoto.
-5.  Abrir um pull request na interface do GitHub, solicitando a revisão e o merge da branch para a branch principal.
+#### Exemplo de Checklist:
+1. O código segue os padrões definidos?
+2. Os testes passam em todas as condições?
+3. A documentação foi atualizada?
 
-**Code Reviews:**
+### Ferramentas de Automação: GitHub Actions
+GitHub Actions permite automatizar fluxos de trabalho, como:
+- Testes automatizados.
+- Linting de código.
+- Deploy automático após a merge.
 
-Code reviews são o processo de revisão do código proposto em um pull request por outros desenvolvedores.
+#### Exemplo de Workflow:
+```yaml
+name: CI/CD
+on:
+  push:
+    branches:
+      - main
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Configurar Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 16
+      - run: npm install
+      - run: npm test
+```
 
-**Objetivos do Code Review:**
-
-*   Garantir a qualidade do código.
-*   Detectar bugs e vulnerabilidades.
-*   Compartilhar conhecimento e boas práticas.
-*   Manter a consistência do código.
-
-**Ferramentas de Code Review:**
-
-*   GitHub pull request interface
-*   GitLab merge request interface
-*   Bitbucket pull request interface
-*   Outras ferramentas de análise de código estático e revisão.
-
-**Melhores práticas de Code Review:**
-
-*   Foco na clareza e na lógica do código.
-*   Dar feedback construtivo e específico.
-*   Evitar discussões sobre estilo de código (pode ser automatizado com linters).
-*   Ser colaborativo e buscar consenso.
 
 ## 1.2 Desenvolvimento Frontend
 

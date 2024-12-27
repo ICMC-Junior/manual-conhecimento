@@ -397,9 +397,9 @@ jobs:
 ```
 
 
-## 1.2 Desenvolvimento Frontend
+# 1.2 Desenvolvimento Frontend
 
-### 1.2.1 HTML Semântico e Acessibilidade
+## 1.2.1 HTML Semântico e Acessibilidade
 
 **HTML Semântico:**
 
@@ -415,59 +415,96 @@ HTML semântico é o uso correto das tags HTML para descrever o significado e a 
 
 Acessibilidade é a prática de tornar o conteúdo da web acessível para todas as pessoas, incluindo aquelas com deficiências visuais, auditivas, motoras ou cognitivas.
 
-**Práticas de Acessibilidade:**
+### Landmarks e ARIA
 
-*   Utilizar HTML semântico corretamente.
-*   Fornecer texto alternativo para imagens (`alt`).
-*   Definir labels para formulários.
-*   Garantir contraste adequado entre cores.
-*   Usar ARIA (Accessible Rich Internet Applications) para elementos dinâmicos.
-*   Teste com leitores de tela.
+**Landmarks:** ajudam leitores de tela a navegar. Elementos como `<header>`, `<nav>`, `<main>` e `<footer>` são essenciais.
 
-### 1.2.2 CSS Modules e Estilização
+**ARIA (Accessible Rich Internet Applications):**
+ARIA melhora a acessibilidade para componentes dinâmicos, como menus dropdown e carrosséis interativos.
 
-**O que são CSS Modules?**
+#### Exemplos de Uso:
+```html
+<nav aria-label="Menu Principal">
+  <ul>
+    <li><a href="#home">Home</a></li>
+    <li><a href="#about">Sobre</a></li>
+  </ul>
+</nav>
 
-CSS Modules são uma técnica que permite o escopo local de estilos CSS, evitando conflitos de nomes em projetos grandes. Em vez de aplicar estilos globalmente, cada componente tem seus próprios estilos isolados.
-
-**Como usar CSS Modules:**
-
-1.  Criar arquivos CSS com a extensão `.module.css` ou `.module.scss`.
-2.  Importar os estilos como um objeto em seus componentes.
-3.  Acessar os estilos usando a notação de ponto.
-
-**Exemplo:**
-
-```css
-/* Component.module.css */
-.title {
-  font-size: 24px;
-  color: blue;
-}
-
-/* Component.jsx */
-import styles from './Component.module.css';
-
-function Component() {
-  return <h1 className={styles.title}>Título do Componente</h1>;
-}
-
+<section aria-labelledby="sec1">
+  <h2 id="sec1">Seção 1</h2>
+  <p>Conteúdo da seção 1.</p>
+</section>
 ```
 
-**Vantagens dos CSS Modules:**
+**Conformidade com WCAG 2.1:**
+- Garantir contraste de cores suficiente.
+- Prover navegação por teclado.
+- Evitar conteúdos piscando rapidamente (para prevenir ataques epilépticos).
+- Fornecer textos alternativos para imagens (`alt`).
 
-*   Evitam conflitos de nomes de classes.
-*   Promovem a modularização e a reutilização de estilos.
-*   Tornam o código mais fácil de manter.
-*   Permitem a composição de estilos.
+## 1.2.2 CSS Modules e Estilização
+
+**CSS Modules:**
+CSS Modules são arquivos CSS que encapsulam os estilos para evitar conflitos globais. Eles promovem a modularização e a reutilização de estilos.
+
+#### Como usar CSS Modules:
+1. Criar arquivos CSS com a extensão `.module.css` ou `.module.scss`.
+2. Importar os estilos como um objeto em seus componentes.
+3. Acessar os estilos usando a notação de ponto.
+
+#### Exemplo:
+**Arquivo CSS:**
+```css
+/* Botao.module.css */
+.botao {
+  background-color: blue;
+  color: white;
+}
+```
+
+**Componente React:**
+```jsx
+import styles from './Botao.module.css';
+
+function Botao() {
+  return <button className={styles.botao}>Clique aqui</button>;
+}
+```
 
 **Outras Ferramentas de Estilização:**
-
 *   **Styled Components:** Uma biblioteca que permite escrever CSS dentro do JavaScript.
-*   **Tailwind CSS:** Um framework CSS utilitário que oferece classes pré-definidas para estilos.
-*   **Bootstrap:** Um framework CSS popular que oferece componentes reutilizáveis.
+*   **Tailwind CSS:** Um framework utilitário com classes pré-definidas para estilização.
+*   **Bootstrap:** Framework para componentes reutilizáveis e responsivos.
 
-### 1.2.3 React: Componentes, Hooks e Context API
+### Atomic Design
+
+O Atomic Design organiza interfaces em hierarquias reutilizáveis:
+1. **Átomos:** Botões, inputs.
+2. **Moléculas:** Combinações simples, como um campo de busca.
+3. **Organismos:** Grupos complexos, como cabeçalhos ou cards.
+4. **Templates:** Layouts baseados em organismos.
+
+#### Exemplo:
+**Átomo (Botão):**
+```jsx
+function Botao({ texto }) {
+  return <button>{texto}</button>;
+}
+```
+**Molécula (Formulário):**
+```jsx
+function Formulario() {
+  return (
+    <form>
+      <input type="text" placeholder="Nome" />
+      <Botao texto="Enviar" />
+    </form>
+  );
+}
+```
+
+## 1.2.3 React
 
 **O que é React?**
 
@@ -477,7 +514,16 @@ React é uma biblioteca JavaScript para criar interfaces de usuário. Ele é bas
 
 Componentes são blocos de construção reutilizáveis de interfaces de usuário. Em React, os componentes são implementados como funções ou classes JavaScript.
 
-**Hooks:**
+### Componentes Funcionais
+
+Os componentes funcionais simplificam o código e permitem o uso de Hooks.
+```jsx
+function Componente({ mensagem }) {
+  return <h1>{mensagem}</h1>;
+}
+```
+
+### Hooks
 
 Hooks são funções que permitem que componentes funcionais usem recursos do React, como estado, efeitos colaterais e contexto.
 
@@ -490,7 +536,23 @@ Hooks são funções que permitem que componentes funcionais usem recursos do Re
 *   `useMemo`: Para memoizar valores computados em funções.
 *   `useCallback`: Para memoizar funções para evitar criação de funções em loops e re-renderizações.
 
-**Context API:**
+#### Exemplo:
+```jsx
+import { useState } from 'react';
+
+function Contador() {
+  const [contagem, setContagem] = useState(0);
+
+  return (
+    <div>
+      <p>Você clicou {contagem} vezes</p>
+      <button onClick={() => setContagem(contagem + 1)}>Clique</button>
+    </div>
+  );
+}
+```
+
+### Context API
 
 Context API é um mecanismo para compartilhar dados entre componentes sem precisar passá-los por props. É útil para dados globais como temas, informações de usuário e configurações.
 
@@ -500,22 +562,59 @@ Context API é um mecanismo para compartilhar dados entre componentes sem precis
 2.  Usar um `Provider` para envolver os componentes que precisam acessar os dados.
 3.  Usar o hook `useContext` nos componentes para consumir os dados.
 
-### 1.2.4 UX/Prototipação para Frontends
+#### Exemplo:
+```jsx
+import { createContext, useContext } from 'react';
+
+const TemaContext = createContext('claro');
+
+function Exemplo() {
+  const tema = useContext(TemaContext);
+  return <div style={{ background: tema === 'claro' ? '#fff' : '#333' }}>Tema: {tema}</div>;
+}
+```
+
+### Suspense e React Server Components
+
+**Suspense** permite lidar com carregamento assíncrono.
+#### Exemplo:
+```jsx
+import { Suspense } from 'react';
+
+function App() {
+  return (
+    <Suspense fallback={<p>Carregando...</p>}>
+      <Conteudo />
+    </Suspense>
+  );
+}
+```
+
+**React Server Components** permitem renderização no servidor, otimizando performance.
+
+## 1.2.4 UX/Prototipação para Frontends
 
 **UX (User Experience):**
 
-UX é a disciplina que se concentra em melhorar a experiência do usuário ao interagir com um produto ou serviço. Inclui a pesquisa com usuários, o design de interfaces e a garantia de que o produto seja fácil de usar e atenda às necessidades dos usuários.
+UX é a disciplina que se concentra em melhorar a experiência do usuário ao interagir com um produto ou serviço. Inclui pesquisa com usuários, design de interfaces e garantia de usabilidade.
 
-**Prototipação:**
+### Ferramentas de Prototipação
 
-Prototipação é o processo de criar versões simplificadas de interfaces de usuário para testar e refinar o design. Protótipos podem variar de esboços em papel a modelos interativos de alta fidelidade.
-
-**Ferramentas de Prototipação:**
-
-*   **Figma:** Uma ferramenta colaborativa para design de interfaces e prototipação.
-*   **Adobe XD:** Ferramenta da Adobe para prototipação e design.
-*   **Sketch:** Ferramenta de design para macOS.
+*   **Figma:** Criação de interfaces interativas.
+*   **Adobe XD:** Prototipação rápida com integração de animações.
 *   **InVision:** Ferramenta para prototipação e colaboração.
+
+#### Exemplo:
+1. Criar wireframes no Figma.
+2. Compartilhar protótipos com stakeholders para feedback.
+3. Exportar designs e inspecionar especificações para desenvolvedores.
+
+### Integração com Design Systems
+
+Design Systems promovem consistência.
+#### Exemplo de Integração:
+1. Importar componentes prontos de um Design System (ex.: Material-UI).
+2. Customizar tema para identidade visual do projeto.
 
 **Princípios de UX:**
 
@@ -525,40 +624,9 @@ Prototipação é o processo de criar versões simplificadas de interfaces de us
 *   **Layout:** Organizar o conteúdo de forma clara e lógica.
 *   **Consistência:** Manter a consistência visual e funcional em toda a interface.
 
-### 1.2.5 Electron: Desenvolvimento de Aplicativos Desktop
+## 1.2.5 Frameworks CSS
 
-**O que é Electron?**
-
-Electron é um framework para criar aplicações desktop usando tecnologias web (HTML, CSS e JavaScript). Ele permite que desenvolvedores web criem aplicações multiplataforma (Windows, macOS e Linux) usando o mesmo código.
-
-**Como funciona o Electron?**
-
-Electron usa o Chromium (o mesmo motor do Google Chrome) para renderizar a interface e o Node.js para acessar recursos do sistema operacional.
-
-**Componentes do Electron:**
-
-*   **Main Process:** O processo principal, responsável por criar as janelas e gerenciar os eventos.
-*   **Renderer Process:** Os processos de renderização, responsáveis por exibir as interfaces de usuário (uma por janela).
-*   **Node.js Integration:** Acesso a recursos do sistema operacional e APIs do Node.js.
-
-**Como desenvolver com Electron:**
-
-1.  Criar um projeto Node.js.
-2.  Instalar o Electron com `npm install electron`.
-3.  Criar um arquivo principal (`main.js`) para configurar a aplicação.
-4.  Criar arquivos HTML, CSS e JavaScript para a interface de usuário.
-5.  Usar as APIs do Electron para controlar as janelas, menus e outros recursos.
-
-**Vantagens do Electron:**
-
-*   Desenvolvimento multiplataforma.
-*   Uso de tecnologias web conhecidas.
-*   Grande comunidade e ecossistema.
-*   Acesso a recursos do sistema operacional.
-
-### 1.2.6 Frameworks CSS (Tailwind, Bootstrap)
-
-**Tailwind CSS:**
+### Tailwind CSS
 
 Tailwind CSS é um framework CSS utilitário que oferece classes pré-definidas para estilos. Em vez de escrever CSS personalizado, você usa classes como `text-center`, `bg-blue-500` e `p-4` para estilizar elementos.
 
@@ -576,7 +644,18 @@ Tailwind CSS é um framework CSS utilitário que oferece classes pré-definidas 
 3.  Incluir o Tailwind no arquivo CSS.
 4.  Usar as classes utilitárias no HTML.
 
-**Bootstrap:**
+#### Exemplo:
+```jsx
+function Card() {
+  return (
+    <div className="bg-blue-500 text-white p-4 rounded">
+      <h1>Olá, Tailwind!</h1>
+    </div>
+  );
+}
+```
+
+### Bootstrap
 
 Bootstrap é um framework CSS que oferece componentes reutilizáveis para interfaces de usuário, incluindo botões, tabelas, formulários e barras de navegação.
 
@@ -590,6 +669,16 @@ Bootstrap é um framework CSS que oferece componentes reutilizáveis para interf
 
 1.  Incluir o CSS e o JavaScript do Bootstrap no seu projeto.
 2.  Usar os componentes e as classes do Bootstrap no HTML.
+
+#### Exemplo:
+```html
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">Coluna 1</div>
+    <div class="col-md-6">Coluna 2</div>
+  </div>
+</div>
+```
 
 **Comparação entre Tailwind e Bootstrap:**
 

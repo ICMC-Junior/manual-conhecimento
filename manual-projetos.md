@@ -239,7 +239,7 @@ O controle de versão é uma prática essencial no desenvolvimento de software m
 - **Issues:** Usar issues para rastrear bugs, tarefas e melhorias.
 - **Projetos e Milestones:** Organizar o trabalho usando projetos e milestones.
 
-### 1.1.1 Fluxos de Trabalho com Git: Git Flow, Trunk-Based Development e estratégias de branching
+## 1.1.1 Fluxos de Trabalho com Git: Git Flow, Trunk-Based Development e estratégias de branching.
 
 ### Git Flow
 O Git Flow é uma abordagem de gerenciamento de ramificações projetada para projetos com ciclos de vida bem definidos, como o desenvolvimento de versões. Ele organiza o repositório em diferentes tipos de branches:
@@ -305,7 +305,7 @@ git push origin main
 *   `git rebase`: Reorganiza o histórico de commits de uma branch.
 *   `git tag`: Cria um ponto de marcação no histórico do seu repositório Git
 
-## 1.1.2 Colaboração em Projetos no GitHub: Issues, Projects e Wiki para documentação colaborativa
+## 1.1.2 Colaboração em Projetos no GitHub: Issues, Projects e Wiki para documentação colaborativa.
 
 ### Issues
 As issues permitem rastrear bugs, solicitações de funcionalidades e outras tarefas relacionadas ao projeto. Elas oferecem:
@@ -339,7 +339,7 @@ A Wiki é ideal para documentação colaborativa, como:
 1. Acessar a aba **Wiki** no repositório.
 2. Criar páginas para cada seção necessária (ex.: "Getting Started", "API Documentation").
 
-## 1.1.3 Pull Requests e Code Reviews
+## 1.1.3 Pull Requests e Code Reviews: Boas práticas, ferramentas de automação (GitHub Actions) e análise de qualidade de código.
 
 ### Pull Requests
 Pull Requests (PRs) permitem integrar alterações de branches para branches principais de forma revisável. Incluem:
